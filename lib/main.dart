@@ -39,6 +39,10 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget iconBox = Container(
+        padding: const EdgeInsets.all(16),
+        child: Icon(Icons.star, color: Colors.yellow[800]));
+
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -68,10 +72,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          iconBox,
           const Text('41'),
         ],
       ),
@@ -94,8 +95,8 @@ class MyApp extends StatelessWidget {
       title: 'Trying out flutter layout',
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Flutter layout demo'),
-          ),
+              title: const Text('Trying Layouts'),
+              backgroundColor: Colors.purple[300]),
           body: ListView(
             children: [
               Image.asset(
@@ -106,7 +107,7 @@ class MyApp extends StatelessWidget {
               ),
               titleSection,
               buttonSection,
-              textSection
+              textSection,
             ],
           )),
     );
