@@ -24,22 +24,31 @@ class MyApp extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: [CardImageText()],
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
     );
   }
 }
 
-class CardImageText extends StatelessWidget {
-  const CardImageText({super.key});
+class BlueBox extends StatelessWidget {
+  const BlueBox({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Image(
-          image: NetworkImage(
-              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-        )
-      ],
+    return Container(
+      width: 64,
+      height: 64,
+      margin: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        border: Border.all(width: 0, style: BorderStyle.none),
+      ),
+      child: const Center(
+        child: Text("Hi", style: TextStyle(fontSize: 24, color: Colors.white)),
+      ),
     );
   }
 }
