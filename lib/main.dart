@@ -4,36 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Welcome, Red",
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.yellow[900],
-        ),
-        body: const Center(
-          child: Text(
-            'Red\'s Text',
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 24.0,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-        ),
-        floatingActionButton: const FloatingActionButton(
-          onPressed: _handlePress,
-          child: Text("click"),
-        ),
-      ),
-    ),
+    MaterialApp(home: const Home()),
   );
 }
 
@@ -52,6 +23,50 @@ class MyApp extends StatelessWidget {
 }
 
 void _handlePress() {}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Welcome, Red",
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.yellow[900],
+      ),
+      body: const Center(
+        child: Text(
+          'Red\'s Text',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 24.0,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+      ),
+      floatingActionButton: const FloatingActionButton(
+        onPressed: _handlePress,
+        child: Text("clicks"),
+      ),
+    );
+  }
+}
 
 class CardImageText extends StatelessWidget {
   const CardImageText({super.key});
